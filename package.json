@@ -1,7 +1,7 @@
 {
-  "name": "animatedBottomtab",
+  "name": "react-native-animated-bottomtab",
   "version": "0.0.1",
-  "private": true,
+  "private": false,
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
@@ -38,5 +38,20 @@
   },
   "engines": {
     "node": ">=16"
-  }
+  },
+  "description": "<img src=\"./preview/animatedBottomTab.gif\" width=\"'100%'\" height=\"auto\" />",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liveforownhappiness/react-native-animated-bottomtab.git"
+  },
+  "keywords": [
+    "react-native"
+  ],
+  "author": "liveforownhappiness@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liveforownhappiness/react-native-animated-bottomtab/issues"
+  },
+  "homepage": "https://github.com/liveforownhappiness/react-native-animated-bottomtab#readme"
 }
