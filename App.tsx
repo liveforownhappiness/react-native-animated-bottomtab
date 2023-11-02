@@ -20,6 +20,7 @@ import Screen3 from './src/components/Screen3';
 import Screen4 from './src/components/Screen4';
 import Screen5 from './src/components/Screen5';
 import Screen1 from './src/components/Screen1';
+import {NavigationContainer} from '@react-navigation/native';
 
 export type BottomTabParamList = {
   Screen3: undefined;
@@ -114,10 +115,10 @@ const TabArr = [
 ];
 
 const TabButton = (props: BottomTabBarButtonProps) => {
-  const {onPress, accessibilityState} = props;
+  const {item, onPress, accessibilityState} = props;
   const focused = accessibilityState!.selected;
-  const viewRef = useRef(null);
-  const lineRef = useRef(null);
+  const viewRef = useRef<Animatable.AnimatableProps>(null);
+  const lineRef = useRef<Animatable.AnimatableProps>(null);
   useEffect(() => {
     if (focused) {
       viewRef.current.animate({
@@ -145,19 +146,18 @@ const TabButton = (props: BottomTabBarButtonProps) => {
       style={styles.container}>
       <Animatable.View ref={lineRef} duration={200} style={styles.line} />
       <Animatable.View ref={viewRef} duration={1000} style={styles.container}>
-        <TabBarIcon focused={focused} name={item.route} />
+        <TabBarIcon focused={focused} name={item?.route} />
       </Animatable.View>
     </TouchableOpacity>
   );
 };
 
-export const BottomTabNavigator = () =>
-  // props: StackScreenProps<RootStackParamList, 'BottomTab'>,
-  {
-    const Tab = createBottomTabNavigator<BottomTabParamList>();
-    console.log('rendering BottomTabNavigator :::::::::::');
+const App = () => {
+  const Tab = createBottomTabNavigator<BottomTabParamList>();
+  console.log('rendering BottomTabNavigator :::::::::::');
 
-    return (
+  return (
+    <NavigationContainer>
       <View style={{flex: 1}}>
         <Tab.Navigator
           screenOptions={() => ({
@@ -183,7 +183,7 @@ export const BottomTabNavigator = () =>
                 options={{
                   tabBarShowLabel: false,
                   tabBarButton: (props: BottomTabBarButtonProps) => (
-                    <TabButton {...props} />
+                    <TabButton {...props} item={item} />
                   ),
                 }}
               />
@@ -191,8 +191,11 @@ export const BottomTabNavigator = () =>
           })}
         </Tab.Navigator>
       </View>
-    );
-  };
+    </NavigationContainer>
+  );
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
