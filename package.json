@@ -46,12 +46,12 @@
     "url": "git+https://github.com/liveforownhappiness/react-native-animated-bottomtab.git"
   },
   "keywords": [
-    "react-native"
+    "react-native", "react-native-animatable", "@react-navigation/bottom-tabs" ,"react-native-animated"
   ],
   "author": "liveforownhappiness@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/liveforownhappiness/react-native-animated-bottomtab/issues"
   },
-  "homepage": "https://github.com/liveforownhappiness/react-native-animated-bottomtab#readme"
+  "homepage": "https://liveforownhappiness.tistory.com/"
 }
