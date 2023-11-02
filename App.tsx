@@ -1,4 +1,3 @@
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   BottomTabBarButtonProps,
   createBottomTabNavigator,
@@ -16,11 +15,11 @@ import SupportOff from './src/assets/icons/bottomtab/supportOff.svg';
 import SupportOn from './src/assets/icons/bottomtab/supportOn.svg';
 import TvOff from './src/assets/icons/bottomtab/tvOff.svg';
 import TvOn from './src/assets/icons/bottomtab/tvOn.svg';
-import {Screen1} from './src/components/Screen1';
-import {Screen2} from './src/components/Screen2';
-import {Screen3} from './src/components/Screen3';
-import {Screen4} from './src/components/Screen4';
-import {Screen5} from './src/components/Screen5';
+import Screen2 from './src/components/Screen2';
+import Screen3 from './src/components/Screen3';
+import Screen4 from './src/components/Screen4';
+import Screen5 from './src/components/Screen5';
+import Screen1 from './src/components/Screen1';
 
 export type BottomTabParamList = {
   Screen3: undefined;
@@ -160,7 +159,6 @@ export const BottomTabNavigator = () =>
 
     return (
       <View style={{flex: 1}}>
-        {/* <WowplanetHeader navigation={props.navigation} route={props.route} /> */}
         <Tab.Navigator
           screenOptions={() => ({
             headerShown: false,
@@ -184,7 +182,9 @@ export const BottomTabNavigator = () =>
                 component={item.component}
                 options={{
                   tabBarShowLabel: false,
-                  tabBarButton: props => <TabButton {...props} item={item} />,
+                  tabBarButton: (props: BottomTabBarButtonProps) => (
+                    <TabButton {...props} />
+                  ),
                 }}
               />
             );
