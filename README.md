@@ -1,4 +1,4 @@
-# `react-native-animated-bottomtab`(https://www.npmjs.com/package/react-native-signup-checkbox)
+# `react-native-animated-bottomtab`(https://www.npmjs.com/package/react-native-animated-bottomtab)
 
 # Preview
 
