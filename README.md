@@ -1,3 +1,5 @@
+# `react-native-animated-bottomtab`(https://www.npmjs.com/package/react-native-signup-checkbox)
+
 # Preview
 
 <img src="./preview/animatedBottomTab.gif" width="'100%'" height="auto" />
